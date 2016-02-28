@@ -5,32 +5,37 @@
 package Java002;
 
 /**
- * @author �i�쐬�ҁj <br />
- *         �i�N���X�_�����j <br />
- *         �i�����j <br />
- *         �X�V���� yyyy/mm/dd �i�X�V�ҁj�F�i�����j <br />
+ * @author 真上公貴 <br />
+ *         Java002 問1 <br />
+ *         1~100までの数値をループで回して、加算するコードを作成する。 <br />
+ *         更新履歴 yyyy/mm/dd （更新者）：（説明） <br />
  */
 public class Test07 {
   /**
-   * 1~100�܂ł̐��l�����[�v�ŉ񂵂āA���Z����R�[�h���쐬����B
+   * 1~100までの数値をループで回して、加算するコードを作成する。
    * 
-   * @param args ���s������
+   * @param args 実行時引数
    */
   public static void main( String[] args ) {
-    int var = 0;
-    int i;
-    for ( i = 1; i < 101; i++ ) {
-      var = var + i;
+    int var = 0;  //合計値
+    for ( int i = 1; i < 101; i++ ) {                //1~100までの総和を算出
+      var += i;
     }
-    System.out.println( args[0] + " " + var );
+    System.out.println( args[0] + " " + var );  //計算結果を表示
   }
 
-  private static void test10sub( int num[] ) {
-    int var = 0;
-    int i;
-    for ( i = num[0]; i < num[1]; i++ ) {
-      var = num[0] + i;
+  /**
+   * （メソッド論理名） <br />
+   * 1~100までの数値をループで回して、加算するコードを作成する。
+   * @param num
+   */
+  public static int test10sub( int num[] ) {
+    int var = 0;  //合計値
+    for ( int i = num[0]; i <= num[1]; i++ ) {             //渡された値の総和を算出
+      var += i;
     }
-    System.out.println( "�l��\�����܂��B " + var );
+/**    System.out.println( "値を表示します。 " + var );  //計算結果を表示
+*/
+    return var;
   }
 }
