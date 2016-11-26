@@ -54,15 +54,20 @@ public class Servlet_002 extends HttpServlet {
     // View_002.htmlから値を取得して、カンマで分割する
     String input1 = request.getParameter( "input1" );
     String[] talls = input1.split( ",", 0 );
-    // 標準体重を算出して、出力する
     for ( int i = 0; i < talls.length; i++ ) {
       int talli = Integer.parseInt( talls[i] );
+      //身長を標準出力する
+      System.out.println( "身長" + talli );
+      // 標準体重を算出して、出力する
       double weightavr = ( talli - 100 ) * 0.9;
       pw.println( weightavr );
-      //改行したい
+      pw.println("<br>");
+      //平均体重を標準出力する
+      System.out.println( "平均体重" + weightavr );
     }
+    pw.println( "</body>" );
+    pw.println( "</html>" );
   }
-
   /**
    * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
    */
