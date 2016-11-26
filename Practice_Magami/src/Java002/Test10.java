@@ -16,7 +16,7 @@ public class Test10 {
    */
   public static void main( String args[] ) {
     int[] num = {1, 101};   //配列の定義
-    int henkyaku = Test07.test10sub(num);                   //加算処理のメソッド
+    int henkyaku = Test07.test10sub(num);                   //加算処理のメソッド。クラス名＋メソッド名で呼び出す。
     System.out.println( "値を表示します。 " + henkyaku );   //計算結果を表示
 
   }

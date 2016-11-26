@@ -1,0 +1,98 @@
+//–â1
+
+//ƒ[ƒJƒ‹DB
+Setting environment for MariaDB 10.1 (x64)
+
+C:\WINDOWS\System32>mysql -u root -p
+Enter password: ****
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 6
+Server version: 10.1.14-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2016, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]>
+
+//–â2
+
+MariaDB [(none)]> CREATE DATABASE moeiwast_eiwatest_DB01;
+Query OK, 1 row affected (0.01 sec)
+
+MariaDB [(none)]>
+
+//–â3
+
+MariaDB [(none)]> CREATE TABLE moeiwast_eiwatest_DB01.test_table(INT_NUM BIGINT(5), NAME_STR VARCHAR(40), DBL_NUM DOUBLE(6,3), CREATE_DATE DATE,PRIMARY KEY(INT_NUM,NAME_STR)) CHARACTER SET sjis;
+Query OK, 0 rows affected (0.03 sec)
+
+MariaDB [(none)]>
+
+//–â4
+
+MariaDB [(none)]> \. C:\eclipse\workspace\M_MagamiRepository\Practice_Magami\MySQL001\InsertTest.sql
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [(none)]>
+
+//–â5
+
+MariaDB [(none)]> SELECT * FROM moeiwast_eiwatest_DB01.test_table;
++---------+----------------------+---------+-------------+
+| INT_NUM | NAME_STR             | DBL_NUM | CREATE_DATE |
++---------+----------------------+---------+-------------+
+|       1 | ƒeƒXƒg‘¾˜Y           | 123.456 | 2010-01-01  |
+|       2 | ‚`‚a‚b‚c‚d‚e‚f       |   0.456 | 2013-02-02  |
+|       3 | ABCDEFG              | 999.999 | 2015-03-03  |
+|       4 | ‚P‚Q‚R‚S‚T‚U‚V‚W‚X‚O |    NULL | 2015-04-04  |
+|   99999 | 1234567890           |   0.000 | 2016-05-05  |
++---------+----------------------+---------+-------------+
+5 rows in set (0.00 sec)
+
+MariaDB [(none)]>
+
+//–â6
+
+MariaDB [(none)]> DESC moeiwast_eiwatest_DB01.test_table;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| INT_NUM     | bigint(5)   | NO   | PRI | NULL    |       |
+| NAME_STR    | varchar(40) | NO   | PRI | NULL    |       |
+| DBL_NUM     | double(6,3) | YES  |     | NULL    |       |
+| CREATE_DATE | date        | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+4 rows in set (0.01 sec)
+
+MariaDB [(none)]>
+
+//–â7
+
+MariaDB [(none)]> SELECT * FROM moeiwast_eiwatest_DB01.test_table WHERE CREATE_DATE BETWEEN '2015-01-01' AND '2015-12-31' ORDER BY CREATE_DATE desc;
++---------+----------------------+---------+-------------+
+| INT_NUM | NAME_STR             | DBL_NUM | CREATE_DATE |
++---------+----------------------+---------+-------------+
+|       4 | ‚P‚Q‚R‚S‚T‚U‚V‚W‚X‚O |    NULL | 2015-04-04  |
+|       3 | ABCDEFG              | 999.999 | 2015-03-03  |
++---------+----------------------+---------+-------------+
+2 rows in set (0.00 sec)
+
+MariaDB [(none)]> SELECT * FROM moeiwast_eiwatest_DB01.test_table WHERE CREATE_DATE BETWEEN '2015-01-01' AND '2015-12-31' ORDER BY CREATE_DATE;
++---------+----------------------+---------+-------------+
+| INT_NUM | NAME_STR             | DBL_NUM | CREATE_DATE |
++---------+----------------------+---------+-------------+
+|       3 | ABCDEFG              | 999.999 | 2015-03-03  |
+|       4 | ‚P‚Q‚R‚S‚T‚U‚V‚W‚X‚O |    NULL | 2015-04-04  |
++---------+----------------------+---------+-------------+
+2 rows in set (0.00 sec)
+
+MariaDB [(none)]>

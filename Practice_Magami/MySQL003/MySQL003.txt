@@ -1,0 +1,68 @@
+MariaDB [moeiwast_eiwatest_DB01]> \. C:\eclipse\workspace\M_MagamiRepository\Practice_Magami\MySQL003\Script_001.sql
+Query OK, 0 rows affected (0.18 sec)
+
+MariaDB [moeiwast_eiwatest_DB01]> \. C:\eclipse\workspace\M_MagamiRepository\Practice_Magami\MySQL003\Script_002.sql
+Query OK, 1 row affected (0.22 sec)
+
+Query OK, 1 row affected (0.14 sec)
+
+Query OK, 1 row affected (0.15 sec)
+
++-------------+-----------+--------------+-----------+-------------+
+| STAFF_NO    | OFFICE_CD | STAFF_NAME   | WORK_TIME | CREATE_DATE |
++-------------+-----------+--------------+-----------+-------------+
+| 10000000001 | 1         | 東京　太郎   |       185 | 2015-01-01  |
+| 10000000002 | 2         | 千葉　次郎   |       230 | 2015-02-01  |
+| 10000000003 | 1         | 神奈川　花子 |       140 | 2015-03-01  |
++-------------+-----------+--------------+-----------+-------------+
+3 rows in set (0.20 sec)
+
+MariaDB [moeiwast_eiwatest_DB01]> \. C:\eclipse\workspace\M_MagamiRepository\Practice_Magami\MySQL003\Script_003.sql
+Query OK, 1 row affected (0.16 sec)
+
+Query OK, 1 row affected (0.20 sec)
+
++-------------+-----------+--------------+-----------+-------------+
+| STAFF_NO    | OFFICE_CD | STAFF_NAME   | WORK_TIME | CREATE_DATE |
++-------------+-----------+--------------+-----------+-------------+
+| 10000000001 | 1         | 東京　太郎   |       185 | 2015-01-01  |
+| 10000000004 | 3         | 大阪　惠     |       190 | 2015-04-01  |
+| 10000000003 | 1         | 神奈川　花子 |       140 | 2015-03-01  |
++-------------+-----------+--------------+-----------+-------------+
+3 rows in set (0.20 sec)
+
+MariaDB [moeiwast_eiwatest_DB01]> \. C:\eclipse\workspace\M_MagamiRepository\Practice_Magami\MySQL003\Script_004.sql
+Query OK, 3 rows affected (0.14 sec)
+Rows matched: 3  Changed: 3  Warnings: 0
+
++-------------+-----------+--------------+-----------+-------------+
+| STAFF_NO    | OFFICE_CD | STAFF_NAME   | WORK_TIME | CREATE_DATE |
++-------------+-----------+--------------+-----------+-------------+
+| 10000000001 | 1         | 東京　太郎   |       185 | 2016-07-31  |
+| 10000000004 | 3         | 大阪　惠     |       190 | 2016-07-31  |
+| 10000000003 | 1         | 神奈川　花子 |       140 | 2016-07-31  |
++-------------+-----------+--------------+-----------+-------------+
+3 rows in set (0.14 sec)
+
+MariaDB [moeiwast_eiwatest_DB01]> \. C:\eclipse\workspace\M_MagamiRepository\Practice_Magami\MySQL003\Script_005.sql
+Query OK, 3 rows affected (0.22 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 3 rows affected (0.19 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+Query OK, 3 rows affected (0.19 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| STAFF_NO    | varchar(11) | NO   | PRI |         |       |
+| OFFICE_CD   | varchar(3)  | NO   | PRI |         |       |
+| STAFF_NAME  | varchar(50) | NO   | PRI |         |       |
+| WORK_TIME   | double(5,2) | YES  |     | NULL    |       |
+| CREATE_DATE | date        | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+5 rows in set (0.19 sec)
+
+MariaDB [moeiwast_eiwatest_DB01]>
