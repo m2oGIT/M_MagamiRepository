@@ -3,6 +3,7 @@ package web_001;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.math.BigDecimal;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -51,7 +52,7 @@ public class Servlet_002 extends HttpServlet {
     pw.println( "<body>" );
     pw.println( "<h1><font color=\"blue\">結果</font></h1>" );
 
-    // View_002.htmlから値を取得して、カンマで分割する
+    // View_002.htmlからカンマ付きの値を取得して、カンマで分割する
     String input1 = request.getParameter( "input1" );
     String[] talls = input1.split( ",", 0 );
     for ( int i = 0; i < talls.length; i++ ) {
@@ -60,10 +61,12 @@ public class Servlet_002 extends HttpServlet {
       System.out.println( "身長" + talli );
       // 標準体重を算出して、出力する
       double weightavr = ( talli - 100 ) * 0.9;
-      pw.println( weightavr );
+      BigDecimal x = new BigDecimal(weightavr);
+      x = x.setScale(5, BigDecimal.ROUND_HALF_UP);
+      pw.println( x );
       pw.println("<br>");
-      //平均体重を標準出力する
-      System.out.println( "平均体重" + weightavr );
+      //標準体重を標準出力する
+      System.out.println( "標準体重" + x );
     }
     pw.println( "</body>" );
     pw.println( "</html>" );
